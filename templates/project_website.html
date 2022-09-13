@@ -4,11 +4,6 @@
   Personal Website
 {% endblock %}
 
-{% block script %}
-<script>
-</script>
-{% endblock %}
-
 {% block images %}
 <h1 class="project-title">Full Stack Portfolio</h1>
 <h2 class="project-subtitle">Creative Showcase</h2>
@@ -29,9 +24,15 @@
       <figcaption>Logical: Optics Research at LIGO</figcaption>
     </figure>
     <figure>
-      <img src="../static/images/websitecreative.png" alt="seed file">
+      <img id="ImgScreen" src="../static/images/websitecreative.png" alt="seed file" class="expand">
       <figcaption>Creative: 'Triple Blind' Original Screenplay</figcaption>
     </figure>
+  </div>
+
+    <!-- Screenplay Modal -->
+  <div id="ImgScreenModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="ImgScreenContent">
   </div>
 </div>
 {% endblock %}
@@ -62,4 +63,30 @@
     <figcaption>Wes Anderson Typography</figcaption>
   </figure>
 </div>
+{% endblock %}
+
+{% block script %}
+<script>
+  // Get the modal, image, and modal image
+  const modal = document.getElementById("ImgScreenModal");
+  const img = document.getElementById("ImgScreen");
+  const modalImg = document.getElementById("ImgScreenContent");
+
+  // Display image in modal
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  // Exit modal if user click x or outside of the image
+  document.addEventListener("click", function(event) {
+    if (event.target.matches(".close") || event.target.matches(".modal")) {
+      closeModal()
+    }
+  })
+
+  function closeModal() {
+    modal.style.display = "none"
+  }
+</script>
 {% endblock %}

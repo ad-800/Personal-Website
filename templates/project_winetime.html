@@ -4,11 +4,6 @@
   WineTime
 {% endblock %}
 
-{% block script %}
-<script>
-</script>
-{% endblock %}
-
 {% block images %}
 <h1 class="project-title">WineTime Social Media App</h1>
 <h2 class="project-subtitle">A Taliored Wine Experience</h2>
@@ -38,13 +33,25 @@
 </div>
 <div class="image-card-sm">
   <figure>
-    <img src="../static/images/winetime-db.png" alt="website landing page">
+    <img id="ImgDb" src="../static/images/winetime-db.png" alt="website landing page" class="expand">
     <figcaption>Database Schema</figcaption>
   </figure>
   <figure>
-    <img src="../static/images/trello.png" alt="seed file">
+    <img id="ImgTrello" src="../static/images/trello.png" alt="seed file" class="expand">
     <figcaption>Trello Kanban Board</figcaption>
   </figure>
+</div>
+
+<!-- Db Modal -->
+<div id="ImgDbModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="ImgDbContent">
+</div>
+
+<!-- Trello Modal -->
+<div id="ImgTrelloModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="ImgTrelloContent">
 </div>
 {% endblock %}
 
@@ -73,4 +80,30 @@
 <p>I want to extend a huge shoutout to my team: Michele our wine algorithm designer, Patrick our backend engineer, Joáo our fearless spokesperson. I couldn't have asked for a better team<i class="fa-solid fa-heart" style="color:red;"></i></p>
 <img class="image-card-lg" src="../static/images/winetime-landingpage.png" alt="image of film production schedule">
 <figcaption>WineTime Landing Page</figcaption>
+{% endblock %}
+
+{% block script %}
+<script>
+  // Get the modal, image, and modal image
+  const modal = document.getElementById("ImgDbModal");
+  const img = document.getElementById("ImgDb");
+  const modalImg = document.getElementById("ImgDbContent");
+
+  // Display image in modal
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  // Exit modal if user click x or outside of the image
+  document.addEventListener("click", function(event) {
+    if (event.target.matches(".close") || event.target.matches(".modal")) {
+      closeModal()
+    }
+  })
+
+  function closeModal() {
+    modal.style.display = "none"
+  }
+</script>
 {% endblock %}
