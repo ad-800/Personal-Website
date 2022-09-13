@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 # Configure application
 app = Flask(__name__)
@@ -43,3 +43,7 @@ def project_website():
 @app.route("/project_exqcorps")
 def project_exqcorps():
     return render_template("project_exqcorps.html")
+
+@app.route("/cv", methods=['GET', 'POST'])
+def cv():
+    return send_from_directory(directory='/static/images', filename='Cummins_CV.pdf', mimetype='application/pdf')
