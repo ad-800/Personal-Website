@@ -1,0 +1,16 @@
+/* Inside Flap */
+.inside-flap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inside-flap-text {
+  line-height: 0.5;
+}
+
+.inside-flap > img {
+  height: 100px;
+  border: 2px solid #794f0b;
+}

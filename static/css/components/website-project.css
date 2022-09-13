@@ -1,0 +1,11 @@
+/* Website Project */
+.card-project-website, .tooltip-web {
+  background-color: #794f0b;
+  font-size: 16px;
+  font-family: 'Corben', cursive;
+  color: #FFDD4A;
+  line-height: 1.5;
+  text-shadow: 3px 3px #296EB4;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

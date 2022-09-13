@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+  </head>
+  <body>
+    <div class="book-container">
+      <div class="container inside-flap">
+        {% block inside_cover %}{% endblock %}
+      </div>
+
+      <div class="container">
+        <h1 id="title"><a href="/">CONTENTS</a></h1>
+        <hr class="style">
+        <p class="chapter"><a href="/preface">Preface</a></p>
+
+        <p><u>Part One: Software Development Projects</u></p>
+        <div class="flex-container">
+          <a href="/project_movie"><div class="card card-project-movie tooltip">Movie Picker
+            <span class="tooltip-text tooltip-s">API & scraper app</span>
+          </div></a>
+          <a href="/project_marketplace"><div class="card card-project-marketplace tooltip">marketplace clone
+            <span class="tooltip-text tooltip-m">Ruby on rails app</span>
+          </div></a>
+          <a href="/project_winetime"><div class="card card-project-product tooltip">WineTime<i class="fa-solid fa-wine-glass"></i>
+            <span class="tooltip-text tooltip-wine">Le Wagon final project</span>
+          </div></a>
+          <a href="/project_exqcorps"><div class="card card-project-game tooltip">Exquisite Corps.
+            <span class="tooltip-text tooltip-g">JavaScript multiplayer game</span>
+          </div></a>
+          <a href="/project_website"><div class="card card-project-website tooltip">This Website
+            <span class="tooltip-text tooltip-web">Personal website</span>
+          </div></a>
+        </div>
+
+        <p><u>Part Two: Miscellaneous Projects</u></p>
+        <div class="flex-container">
+          <a href="/project_film"><div class="card card-project-film tooltip">Part of Me<br>(Част от мен)
+            <span class="tooltip-text tooltip-film">Fulbright short film</span>
+          </div></a>
+          <a href="/project_best"><div class="card card-project-debate tooltip">BEST Foundation
+            <span class="tooltip-text tooltip-debate">Speech & Debate Coach</span>
+          </div></a>
+        </div>
+        <p class="chapter"><a href="#">Curriculum Vitae</a><i class="fa-solid fa-up-right-from-square"></i></p>
+        <ul class="list-inline">
+          <li><a href="https://www.linkedin.com/in/adalyne-cummins-a840b2a0/"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/ad-800"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://www.instagram.com/adalynejane/?hl=en"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

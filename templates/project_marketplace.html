@@ -1,0 +1,71 @@
+{% extends "layout_project.html" %}
+
+{% block title %}
+  Marketplace Clone
+{% endblock %}
+
+{% block script %}
+<script>
+</script>
+{% endblock %}
+
+{% block images %}
+<h1 class="project-title">Buying Hipster Sh*t Just Got Easier</h1>
+<h2 class="project-subtitle">My First Cooperative Website</h2>
+<ul class="list-inline">
+  <li><a href="https://github.com/ad-800/hipster_shit"><i class="fa-brands fa-github"></i></a></li>
+  <li><a href="https://hipstershit.herokuapp.com/"><i class="fa-solid fa-link"></i></a></li>
+</ul>
+<div class="project-text">
+  <p class="snapshot">With a total of 188 git commits in 5 days by four people, our marketplace clone tied MVC architecture together to create a fun place to find cool, hip products.</p>
+  <h3>Working As A Team</h3>
+  <p>One week after learning Ruby on Rails, students at Le Wagon split off into groups to work on a marketplace clone with similar features as Airbnb. My group decided to be a champion of doomed and retro products and focus our app to sell all things hipster. Out of our group of four people, I was lead developer picked to be in charge of delegating tasks, doing stand up meetings with TAs, and pushing to production (heroku). Below is the process we used in development, which focused on feature flow, where all team members develop a feature from backend to front end.</p>
+  <ol class="order-list">
+    <li>We started with crafting 'User Stories' that laid out our required routes, controllers, and controller methods.</li>
+    <li>We created our database schema to illustate the foreign keys and relationships between modals.</li>
+    <li>Next we pair programmed to begin the newly created rails app. Together two people created a skeleton of routes, models, and controllers while the other two worked on inspiration for the design and key UI/UX features.</li>
+    <li>For the next 3.5 days, we needed an organized way to prioritize features, so we started a kanban board on Trello.</li>
+    <li>Next came features. We all created branches, pushing the branch when we were done, and merging back to master. With the website being mostly a simple CRUD application, we worked quickly and managed to present a workable prototype of the website in 2 days at the mid-week demo.</li>
+    <li>The last day and a half was spent adding new features (such as a profile page for the user), and relooking at front-end responsiveness.</li>
+  </ol>
+  <p>Specific parts of the website I worked on were:</p>
+  <ul>
+    <li><u>The Purchases Controller</u> — The only nested resource routes on the website. When a user wants to purchase a product, she creates a new purchase model that stores the user’s ID and the product ID, which has the information about the seller. That way we are able to link the three together (buyer, seller, and product) in a shared database table and mark items as sold.</li>
+    <li><u>Responsiveness</u> — To make sure the website looked good on any device, I customized the bootstrap media configurations. This was especially important for the Navigation Bar, which initially did not resize well.</li>
+    <li><u>Seeds</u> — I customized 10 seeds for the website, using Cloudinary to upload the images of each.</li>
+  </ul>
+</div>
+<div class="image-card-sm">
+  <figure>
+    <img src="../static/images/hipster-figma.png" alt="figma inspiration">
+    <figcaption>Neubrutalism Inspiration</figcaption>
+  </figure>
+  <figure>
+    <img src="../static/images/hipster-stories.png" alt="user stories">
+    <figcaption>User Stories</figcaption>
+  </figure>
+</div>
+{% endblock %}
+
+{% block text %}
+<img class="image-card-lg" src="../static/images/hipster-still-lg.png" alt="image of film production schedule">
+<div class="logos">
+  <img src="../static/images/figma.png" alt="figma logo" width="30px">
+  <img src="../static/images/front.png" alt="html/css logo" width="75px">
+  <img src="../static/images/rails.png" alt="rails logo" width="40px">
+  <img src="../static/images/ruby.png" alt="ruby logo" width="45px">
+  <img src="../static/images/sql.png" alt="ruby logo" width="45px">
+  <img src="../static/images/cloudinary.png" alt="cloudinary logo" width="70px">
+  <img src="../static/images/devise.png" alt="devise logo" width="90px">
+</div>
+<h3>Stack</h3>
+<p>For front-end we used Figma to build a quick wireframe of CSS components, SASS to connect with and refigure bootstrap variables/colors, and HTML.ERB to add logic to our views. For back-end we coded the app with Ruby on Rails, used PostgreSQL as our database, and used the following gems for quick deployment: Cloudinary to have users upload images of products and their profile avatars; Devise to set up the login/signup views; Geocoder for the maps; and Simple Form for the forms. The revolving card CSS code was found on CodePen and adjusted to our design.</p>
+
+<p><u>Improvements to Make:</u></p>
+  <ul>
+    <li><u>CSS Organization</u> — working as a team means writing code that is easy to understand and is consistent. Some of us used bootstrap to style pages, others used custom classes. This made front-end work more complex than it needed be because we all wrote different classes that could have been grouped together better.</li>
+    <li><u>Reviews</u> — One feature we wanted to implement but did not have time was a Reviews Controller that would be displayed on a user’s profile to check the validity of a seller.</li>
+  </ul>
+<img class="image-card-lg" src="../static/images/hipster-show.png" alt="image of film production schedule">
+<figcaption>Product Show Page</figcaption>
+{% endblock %}

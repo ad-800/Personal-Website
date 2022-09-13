@@ -1,0 +1,17 @@
+/* Tooltip */
+.tooltip-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 150px;
+  border: 2px solid #a98467;
+
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}

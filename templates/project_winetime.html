@@ -1,0 +1,76 @@
+{% extends "layout_project.html" %}
+
+{% block title %}
+  WineTime
+{% endblock %}
+
+{% block script %}
+<script>
+</script>
+{% endblock %}
+
+{% block images %}
+<h1 class="project-title">WineTime Social Media App</h1>
+<h2 class="project-subtitle">A Taliored Wine Experience</h2>
+<ul class="list-inline">
+  <li><a href="https://github.com/ad-800/WineTime"><i class="fa-brands fa-github"></i></a></li>
+  <li><a href="http://www.wine-time.me/"><i class="fa-solid fa-link"></i></a></li>
+</ul>
+<div class="project-text">
+  <p class="snapshot">A mobile-first web application that was developed by a team of four people for the final project of the Le Wagon Bootcamp (406 git commits). Take the questionnaire to find your flavor profile, discover new wines, and share them with other users of the site.</p>
+  <h3>Completing the App in 8 Days</h3>
+  <p>Our team followed the same feature flow from the <a href="/project_marketplace">Marketplace Clone project</a>, dividing and conquering models -> controllers -> views vertically. We learned from our messy CSS execution and primarily used Bootstrap for front-end. There were a couple new challenges and features for this application:</p>
+  <ul>
+    <li>Mobile first design. Everything had to be intuitive to navigate and space had to be used carefully to focus attention of the user to the app's primary capabilities.</li>
+    <li>Bootstrap javascript plugins for modals and carousels.</li>
+    <li>Javascript stimulus controller for the questionnaire. A user is required to answer all questions before the Submit button appears.</li>
+    <li>Wine recommendation algorithm (see next heading).</li>
+    <li>No API — we were not able to find a good wine database for free and were forced to seed over 100 wines by hand. Scraping proved too difficult due to the need of background-ridden photographs of the bottles that needed to be uploaded to the Cloudinary photo database.</li>
+  </ul>
+  <p>Specific parts and roles of development I worked on were:</p>
+  <ul>
+    <li><u>Lead Developer</u> — Picked to be in charge of delegating tasks, doing stand up meetings with TAs, and pushing to production (heroku).</li>
+    <li><u>Transferring Questionnaire Data to a New User</u> — WineTime has the functionality that allows visitors to take the questionnaire and get a sample of results before being prompted to sign up. To transfer the results of the quiz to a user’s profile, the values of the answers needed to be stored as an array in a rails session, which stores the answers as a cookie in a user’s browser.</li>
+    <li><u>Position Absolute and Relative</u> — All the incredible drawings the website were created using DALL-E 2 AI. We used them and scribbles from Scribbbles as well as icons from FontAwesome, all of which needed to be positioned carefully for both mobile and desktop views. I became quite the specialist at setting (and centering) relative div widths to best accommodate absolute-positioned images.</li>
+    <li><u>Modal Partial</u> — Joked to be the beating heart of the website, the modal is used all over the website and had to be structured in a easy to read way that did not hinder people working on different parts of the app. The buttons in the modal’s footer depend on where the user is in the site (on their profile, in a search bar, in another user’s profile, in a collection, etc.) and a lot of ERB logic was used to bring everything together.</li>
+    <li><u>Collection Wines Controller</u> — Shared table that links wines to a collection. A Wine can have many CollectionWines and Collections can access Wines through CollectionWines.</li>
+  </ul>
+</div>
+<div class="image-card-sm">
+  <figure>
+    <img src="../static/images/winetime-db.png" alt="website landing page">
+    <figcaption>Database Schema</figcaption>
+  </figure>
+  <figure>
+    <img src="../static/images/trello.png" alt="seed file">
+    <figcaption>Trello Kanban Board</figcaption>
+  </figure>
+</div>
+{% endblock %}
+
+{% block text %}
+<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Flewagonportugal%2Fvideos%2F500242608599465%2F&show_text=false&width=560&t=3480" width="560" height="314" style="border:none;overflow:hidden;width: 100%;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+<div class="logos">
+  <img src="../static/images/figma.png" alt="figma logo" width="30px">
+  <img src="../static/images/front.png" alt="html/css logo" width="75px">
+  <img src="../static/images/js.png" alt="figma logo" width="45px">
+  <img src="../static/images/bootstrap.png" alt="html/css logo" width="45px">
+  <img src="../static/images/rails.png" alt="rails logo" width="40px">
+  <img src="../static/images/ruby.png" alt="ruby logo" width="45px">
+  <img src="../static/images/sql.png" alt="ruby logo" width="45px">
+</div>
+
+<h3>Algorithm Design</h3>
+<p>To add logic to the recommendations, each seeded wine comes with scores for 5 wine flavor profiles (bitter, fruit, mineral, spice, and earth). Each answer in the six question quiz has a weight that corresponds to the values of these five profiles. The more points, the more fruity/spicy, the less points, the more bitter/mineral. Totaling the number of points from the quiz produces a corresponding wine personality, which has its own table in the database. Each personality has three hard-coded wines to recommend in the results page of the quiz.</p>
+
+<p><u>Improvements to Make:</u></p>
+  <ul>
+    <li><u>Adaptive Algorithm</u> — Tastes change and recommendations should adapt based on the wines in a user’s collection. A user should also be able to remove a wine from their recommendations.</li>
+    <li><u>Bugs</u> — We still need to customize the Devise Registration Controller to redirect to custom Sign Up page, make a back button after adding a wine to a collection, and users should not be allowed to add duplicates of a wine to a collection.</li>
+    <li><u>About Page</u> — Tells users more about the recommendations they are getting and how they are calculated from their quiz score.</li>
+    <li><u>Multiselect Quiz</u> —  I enjoy all fruit, not just wild berries :)</li>
+  </ul>
+<p>I want to extend a huge shoutout to my team: Michele our wine algorithm designer, Patrick our backend engineer, Joáo our fearless spokesperson. I couldn't have asked for a better team<i class="fa-solid fa-heart" style="color:red;"></i></p>
+<img class="image-card-lg" src="../static/images/winetime-landingpage.png" alt="image of film production schedule">
+<figcaption>WineTime Landing Page</figcaption>
+{% endblock %}

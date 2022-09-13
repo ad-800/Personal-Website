@@ -1,0 +1,24 @@
+/* Navbar */
+.navbar {
+  background-color: #e7e3df;
+}
+
+.nav-titles {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.nav-titles > p {
+  display: inline;
+  padding: 50px;
+}
+
+#title-navbar {
+  font-size: 30px;
+  font-family: 'Corben', cursive;
+  color: #FFDD4A;
+  text-decoration: none;
+  text-shadow: 5px 5px #296EB4;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

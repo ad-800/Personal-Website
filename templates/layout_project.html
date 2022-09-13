@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+
+    <!-- Javascript Files -->
+    {% block script %}{% endblock %}
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav-titles">
+        <p class="chapter"><a href="/preface">Preface</a></p>
+        <p><a id="title-navbar" href="/">CONTENTS</a></p>
+        <p class="chapter"><a href="#">CV</a><i class="fa-solid fa-up-right-from-square"></i></p>
+      </div>
+      <hr class="style">
+    </div>
+    <div class="flex-cards">
+      <a href="/project_movie"><div class="card card-project-movie tooltip">Movie Picker
+        <span class="tooltip-text tooltip-s">API & scraper app</span>
+      </div></a>
+      <a href="/project_marketplace"><div class="card card-project-marketplace tooltip">marketplace clone
+        <span class="tooltip-text tooltip-m">Ruby on rails app</span>
+      </div></a>
+      <a href="/project_winetime"><div class="card card-project-product tooltip">WineTime<i class="fa-solid fa-wine-glass"></i>
+        <span class="tooltip-text tooltip-wine">Le Wagon final project</span>
+      </div></a>
+      <a href="/project_exqcorps"><div class="card card-project-game tooltip">Exquisite Corps.
+        <span class="tooltip-text tooltip-g">JavaScript multiplayer game</span>
+      </div></a>
+      <a href="/project_website"><div class="card card-project-website tooltip">This Website
+        <span class="tooltip-text tooltip-web">Personal website</span>
+      </div></a>
+      <a href="/project_film"><div class="card card-project-film tooltip">Part of Me<br>(Част от мен)
+        <span class="tooltip-text tooltip-film">Fulbright short film</span>
+      </div></a>
+      <a href="/project_best"><div class="card card-project-debate tooltip">BEST Foundation
+        <span class="tooltip-text tooltip-debate">Speech & debate coach</span>
+      </div></a>
+    </div>
+    <div class="book-container">
+      <div class="container">
+        {% block images %}{% endblock %}
+      </div>
+      <div class="container">
+        <div class="project-text">
+          {% block text %}{% endblock %}
+          <ul class="list-inline">
+            {% block social %}{% endblock %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

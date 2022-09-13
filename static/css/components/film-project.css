@@ -1,0 +1,7 @@
+/* Film Project */
+.card-project-film, .tooltip-film {
+  background-color: #09916b;
+  font-size: 18px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+}

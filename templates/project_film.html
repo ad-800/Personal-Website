@@ -1,0 +1,73 @@
+{% extends "layout_project.html" %}
+
+{% block title %}
+  Film Project
+{% endblock %}
+
+{% block script %}
+<script>
+  // Get the modal
+  const modal = document.getElementsByClassName("modal");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  const img = document.getElementById("filmorganized");
+  const modalImg = document.getElementById("img01");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+</script>
+{% endblock %}
+
+{% block images %}
+<h1 class="project-title">Saying Goodbye</h1>
+<h2 class="project-subtitle">Making a Dual-School, Collaborative Film</h2>
+<div class="project-text">
+  <p class="snapshot">While teaching over 400 high school students a week, I challenged over 20 student screenwriters, videographers, animators to come together and make a film. Here’s what we made.</p>
+  <h3>Background</h3>
+  <p>For 10 months, I worked as a Fulbright English Teaching Assistant in Burgas, Bulgaria. I taught high school students at two schools: Sts. Kiril and Methodij, the Vocational School for Computer Programming and Innovation. One of my main goals was to provide students with space to find their own perspectives and voices in order to reflect upon themselves, their school, and their community. And while there were definitely times when I doubted the successful outcome of this goal, in the end I have been able to look back not only at we’ve done, but also what we’ve created.</p>
+  <ul>
+    <li>I created a dual-school, multi-grade level group of misfit poets and snappy screenwriters. Our newly formed Creative Writing club has grown to around 30 students, some of whom travelled to Veliko Turnovo for the first ever Weekend Writer’s Retreat. They’ve created semi-finalist winning poetry, comics, short stories, memoirs, and even a full length novels.</li>
+    <li>I created a brand new Speech and Debate club, more information here.</li>
+    <li>I created lifelong memories traveling around Bulgaria and Europe, amazing friends and wonderful colleagues, and embraced a community of supportive and adventurous friends in Burgas.</li>
+    <li>I created engaging lessons where students created websites, their own countries, new identities in improv games, and original video games ideas.</li>
+  </ul>
+  <p>And finally, we created a film. Taking about 10 weeks to complete with over 20 students as either as cast or crew, I am proud to present a short, narrative film featuring aspects of my stay in Bulgaria and what I took away with me when I left.</p>
+</div>
+<div class="image-card-sm">
+  <figure>
+    <img src="../static/images/film-still.png" alt="image of code">
+    <figcaption>Still of the main actress, 11th grader Lili Zabbarova</figcaption>
+  </figure>
+  <figure>
+    <img src="../static/images/film-title.png" alt="image of code">
+    <figcaption>Title Sequence</figcaption>
+  </figure>
+</div>
+{% endblock %}
+
+{% block text %}
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/MLOIWKRImlo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p><u>Synopsis:</u> A young English teacher about to leave Bulgaria is stalked by a strange symbol, the meaning of which leads her to a place both familiar and odd, frustrating and inspiring, and, above all, unforgettable.</p>
+
+<h3>Organization</h3>
+<p>With the goal to get as many students as possible interested in producing a film, the process had to be organized. This was not homework, this was not a project that with a grade at the end — this was a job with full autonomy and creative control. The 13 to 17 year olds took this as a breath of fresh air and stuck to the production schedule despite tests, after school activities, and weekend plans. We started with coordinating the shooting and animations schedules virtually on Discord, continued with filming once or twice a week over three weekends, and finished with editing using Adobe Premiere that took 17 hours during the one week to complete the project before the deadline.</p>
+
+<img id="filmorganized"class="image-card-lg expand" src="../static/images/film-production.jpg" alt="image of film production schedule">
+<div class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+</div>
+
+<figcaption>Production schedule</figcaption>
+{% endblock %}

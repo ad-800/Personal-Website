@@ -1,0 +1,65 @@
+{% extends "layout_project.html" %}
+
+{% block title %}
+  Personal Website
+{% endblock %}
+
+{% block script %}
+<script>
+</script>
+{% endblock %}
+
+{% block images %}
+<h1 class="project-title">Full Stack Portfolio</h1>
+<h2 class="project-subtitle">Creative Showcase</h2>
+<div class="project-text">
+  <p class="snapshot">Personal project to showcase my projects and skills as a full stack developer. This website was inspired by my literary and cinematographic interests with the goal of displaying my personality and work clearly, simply, and stylistically.</p>
+  <h3>Self Expression Through Code</h3>
+  <p>In addition to showcasing personal and collaborative programming projects, this website was designed to be a comprehensive look into my other passions and soft skills such as organization, communication, and writing. It also serves as a place to explain intentions, challenges, and my journey.</p>
+  <p>In 2018 graduated from Barnard College studying English and physics. While my interests might have seemed polar, having both an inventive imagination and problem solving logic has been a strangely complementary balance that has influenced how and why I work. At the age of 26, I have switched careers twice, moving from the corporate arena of marketing to the self-sacrificing society of educators, now to the wide-open world of web/software development. I have gained indispensable prowess in each field:</p>
+  <ul>
+    <li><u>Marketing & Technical Writing</u> — I learned the importance of brevity in communication and flexibility in working in a mid-size/small company.</li>
+    <li><u>Teaching</u> — When you stand up and teach in front of 35 students who barely speak English, you are sure to gain confidence in public speaking and empathetic outlook on life. I learned that I thrive most working on projects that mean something to me and have a direct positive impact on the community. I learned that my introversion and passion makes me a great leader.</li>
+    <li><u>Web Development</u> — I learned that self-studying and drive are great but even better with a group of people sharing the experience of changing careers. I learned that there is no mastery of a technology or field, only continued learning.</li>
+  </ul>
+  <p>This website was made with HTML, CSS, and Javascript in a Python Flask Framework. It honors where my idea of programming leveled up from a challenging puzzle to a possible career transition. Harvard’s CS50 Python was the first course that went beyond what code could look like to what code could do. My short time at Le Wagon's Web Development Bootcamp has given me the drive and the tools find employment as Full Stack Developer. This drive comes from a playful place, a place that merges my love of creativity and problem solving.</p>
+  <div class="image-card-sm">
+    <figure>
+      <img src="../static/images/websitelogic.JPG" alt="website modal">
+      <figcaption>Logical: Optics Research at LIGO</figcaption>
+    </figure>
+    <figure>
+      <img src="../static/images/websitecreative.png" alt="seed file">
+      <figcaption>Creative: 'Triple Blind' Original Screenplay</figcaption>
+    </figure>
+  </div>
+</div>
+{% endblock %}
+
+{% block text %}
+<img class="image-card-lg" src="../static/images/websiteindex.png" alt="image of website">
+<div class="logos">
+  <img src="../static/images/front.png" alt="html/css logo" width="75px">
+  <img src="../static/images/js.png" alt="figma logo" width="45px">
+  <img src="../static/images/python.png" alt="python logo" width="45px">
+  <img src="../static/images/flask.png" alt="flask logo" width="45px">
+</div>
+<h3>Design Inspiration</h3>
+<p>The symmetry and color pallet of the website are inspired by the cinematography and topography of American film director Wes Anderson. In many of his films, an omniscient narrator sets the scene, as if reading from a novel. Novels has always been a huge part of my life, first as a reader, now as a writer (one day soon to be published). Similarly, this website is designed to look like a book, with the index page being the table of contents and the projects being chapters.</p>
+<p>Responsiveness of the website was made without Bootstrap, instead relying on Media Queries at custom breakpoints. Javascript was used to expand images, and CSS tooltip made hovering over projects on a desktop dynamic.</p>
+<p><u>Improvements to Make:</u></p>
+  <ul>
+    <li><u>Perfect Google Lighthouse Score</u> — While all fields are over 90%, improvements need to be made to increase accessibility, SEO, and image loading times.</li>
+    <li><u>Think More Mobile</u> — Tooltip does not work when you are on a phone.</li>
+  </ul>
+<div class="image-card-sm">
+  <figure>
+    <img src="../static/images/website-design.png" alt="website modal">
+    <figcaption>Basic UI Kit</figcaption>
+  </figure>
+  <figure>
+    <img src="https://i0.wp.com/www.themacguffin.it/wp-content/uploads/2016/07/The-Wes-Anderson-Collection1-e1468112638529.jpg?fit=919%2C624&ssl=1" alt="seed file">
+    <figcaption>Wes Anderson Typography</figcaption>
+  </figure>
+</div>
+{% endblock %}

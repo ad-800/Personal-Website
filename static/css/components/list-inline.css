@@ -1,0 +1,21 @@
+/* Social Media */
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 20px;
+  font-size: 25px;
+}
+
+.list-inline a {
+  color: #296EB4;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+  margin: 20px 0;
+  transition: 0.3;
+}
+
+.list-inline a:hover {
+  color: #794f0b;
+}
