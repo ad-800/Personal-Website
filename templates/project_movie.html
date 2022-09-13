@@ -4,11 +4,6 @@
   Movie Scraper
 {% endblock %}
 
-{% block script %}
-<script>
-</script>
-{% endblock %}
-
 {% block images %}
 <h1 class="project-title">Pick One Already</h1>
 <h2 class="project-subtitle">Scraping for the Best Movies on Netflix</h2>
@@ -30,13 +25,25 @@
 </div>
 <div class="image-card-sm">
   <figure>
-    <img src="../static/images/pickone-modal.png" alt="website modal">
+    <img id="ImgPick" src="../static/images/pickone-modal.png" alt="website modal" class="expand">
     <figcaption>Bootstrap Modal</figcaption>
   </figure>
   <figure>
-    <img src="../static/images/pickone-seed.png" alt="seed file">
+    <img id="ImgSeed" src="../static/images/pickone-seed.png" alt="seed file" class="expand">
     <figcaption>API Seeds</figcaption>
   </figure>
+</div>
+
+<!-- Pick Modal -->
+<div id="ImgPickModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="ImgPickContent">
+</div>
+
+<!-- Seed Modal -->
+<div id="ImgSeedModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="ImgSeedContent">
 </div>
 {% endblock %}
 
@@ -60,4 +67,48 @@
   </ul>
 <img class="image-card-lg" src="../static/images/pickone-scrape.png" alt="image of film production schedule">
 <figcaption>Inspecting Rotten Tomatoes' Tags</figcaption>
+{% endblock %}
+
+{% block script %}
+<script>
+  // Get the modal, image, and modal image
+  const modal = document.getElementById("ImgPickModal");
+  const img = document.getElementById("ImgPick");
+  const modalImg = document.getElementById("ImgPickContent");
+
+  // Display image in modal
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  // Exit modal if user click x or outside of the image
+  document.addEventListener("click", function(event) {
+    if (event.target.matches(".close") || event.target.matches(".modal")) {
+      closeModal(modal)
+    }
+  })
+
+  // Get the modal, image, and modal image
+  const modal2 = document.getElementById("ImgSeedModal");
+  const img2 = document.getElementById("ImgSeed");
+  const modalImg2 = document.getElementById("ImgSeedContent");
+
+  // Display image in modal
+  img2.onclick = function(){
+    modal2.style.display = "block";
+    modalImg2.src = this.src;
+  }
+
+  // Exit modal if user click x or outside of the image
+  document.addEventListener("click", function(event) {
+    if (event.target.matches(".close") || event.target.matches(".modal")) {
+      closeModal(modal2)
+    }
+  })
+
+  function closeModal(popup) {
+    popup.style.display = "none"
+  }
+</script>
 {% endblock %}

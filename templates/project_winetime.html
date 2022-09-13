@@ -98,12 +98,30 @@
   // Exit modal if user click x or outside of the image
   document.addEventListener("click", function(event) {
     if (event.target.matches(".close") || event.target.matches(".modal")) {
-      closeModal()
+      closeModal(modal)
     }
   })
 
-  function closeModal() {
-    modal.style.display = "none"
+  // Get the modal, image, and modal image
+  const modal2 = document.getElementById("ImgTrelloModal");
+  const img2 = document.getElementById("ImgTrello");
+  const modalImg2 = document.getElementById("ImgTrelloContent");
+
+  // Display image in modal
+  img2.onclick = function(){
+    modal2.style.display = "block";
+    modalImg2.src = this.src;
+  }
+
+  // Exit modal if user click x or outside of the image
+  document.addEventListener("click", function(event) {
+    if (event.target.matches(".close") || event.target.matches(".modal")) {
+      closeModal(modal2)
+    }
+  })
+
+  function closeModal(popup) {
+    popup.style.display = "none"
   }
 </script>
 {% endblock %}

@@ -1,0 +1,46 @@
+/* Images of Projects */
+.image-card-lg {
+  width: 100%;
+  max-height: 350px;
+}
+
+.image-card-sm {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  object-fit: cover;
+  justify-content: center;
+}
+
+figure > img {
+  padding-right: 3px;
+  padding: 5px;
+  object-fit: cover;
+  height: 200px;
+}
+
+figure > img, figcaption {
+  width: 15.5rem;
+}
+
+figcaption {
+  display: block;
+  text-align: left;
+  padding: 5px 0 20px 10px;
+  color: #a98467;
+}
+
+figure {
+  position: relative;
+  margin: 0;
+}
+
+.project-text > p, .project-text > ul {
+  text-align: left;
+}
+
+.snapshot {
+  padding: 10px;
+  margin: 15px;
+  border: 2px dotted #794f0b;
+}

@@ -1,0 +1,14 @@
+/* Links */
+.flex-container > a {
+  text-decoration: none;
+}
+
+.chapter > a {
+  color: #794f0b;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.chapter > a:hover {
+  text-decoration: underline;
+}

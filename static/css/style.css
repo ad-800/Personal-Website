@@ -7,6 +7,9 @@
 @import url("components/tooltip.css");
 @import url("components/ordered-lists.css");
 @import url("components/modal.css");
+@import url("components/facebook-responsive.css");
+@import url("components/youtube-responsive.css");
+@import url("components/links.css");
 
 /* Projects */
 @import url("components/game-project.css");
@@ -16,6 +19,8 @@
 @import url("components/movie-project.css");
 @import url("components/film-project.css");
 @import url("components/debate-project.css");
+
+@import url("components/project-images.css");
 
 /* Index */
 @import url("components/inside-flap.css");
@@ -72,68 +77,6 @@ p, li {
 .description {
   width: 300px;
   line-height: 2;
-}
-
-/* Images of Projects */
-.image-card-lg {
-  width: 100%;
-  max-height: 350px;
-}
-
-.image-card-sm {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  object-fit: cover;
-  justify-content: center;
-}
-
-figure > img {
-  padding-right: 3px;
-  padding: 5px;
-  object-fit: cover;
-  height: 200px;
-}
-
-figure > img, figcaption {
-  width: 15.5rem;
-}
-
-figcaption {
-  display: block;
-  text-align: left;
-  padding: 5px 0 20px 10px;
-  color: #a98467;
-}
-
-figure {
-  position: relative;
-  margin: 0;
-}
-
-.project-text > p, .project-text > ul {
-  text-align: left;
-}
-
-.snapshot {
-  padding: 10px;
-  margin: 15px;
-  border: 2px dotted #794f0b;
-}
-
-/* Links */
-.flex-container > a {
-  text-decoration: none;
-}
-
-.chapter > a {
-  color: #794f0b;
-  font-size: 17px;
-  text-decoration: none;
-}
-
-.chapter > a:hover {
-  text-decoration: underline;
 }
 
 /* Inline Icons */
@@ -203,40 +146,8 @@ i {
   width: 200px;
 }
 
-/* Youtube iFrame Responsiveness */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container > iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .logos > img {
   padding: 5px;
-}
-
-.facebook-responsive {
-  overflow:hidden;
-  padding-bottom:56.25%;
-  position:relative;
-  height:0;
-}
-
-.facebook-responsive > iframe {
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-  position:absolute;
 }
 
 .expand {
@@ -255,10 +166,10 @@ i {
   }
 }
 
-@media(max-width: 780px) {
+@media(max-width: 930px) {
   .container {
-    width: 34rem;
-    margin: 0.3rem auto;
+    width: 100%;
+    margin: 1.5rem 0;
   }
 
   .book-container {
@@ -287,7 +198,17 @@ i {
 
 @media(max-width: 563px) {
   .container {
-    width: 29rem;
-    margin: 0.3rem auto;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .flex-cards .card, .flex-cards .tooltip-text {
+    height: 45px;
+    font-size: 15px;
+    width: 150px;
+  }
+
+  .nav-titles > p {
+    padding: 7px;
   }
 }

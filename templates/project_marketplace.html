@@ -4,11 +4,6 @@
   Marketplace Clone
 {% endblock %}
 
-{% block script %}
-<script>
-</script>
-{% endblock %}
-
 {% block images %}
 <h1 class="project-title">Buying Hipster Sh*t Just Got Easier</h1>
 <h2 class="project-subtitle">My First Cooperative Website</h2>
@@ -41,7 +36,7 @@
     <figcaption>Neubrutalism Inspiration</figcaption>
   </figure>
   <figure>
-    <img src="../static/images/hipster-stories.png" alt="user stories">
+    <img id="ImgMarket" src="../static/images/hipster-stories.png" alt="user stories" class="expand">
     <figcaption>User Stories</figcaption>
   </figure>
 </div>
@@ -68,4 +63,36 @@
   </ul>
 <img class="image-card-lg" src="../static/images/hipster-show.png" alt="image of film production schedule">
 <figcaption>Product Show Page</figcaption>
+
+<!-- The Modal -->
+<div id="ImgMarketModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="ImgMarketContent">
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  // Get the modal, image, and modal image
+  const modal = document.getElementById("ImgMarketModal");
+  const img = document.getElementById("ImgMarket");
+  const modalImg = document.getElementById("ImgMarketContent");
+
+  // Display image in modal
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  // Exit modal if user click x or outside of the image
+  document.addEventListener("click", function(event) {
+    if (event.target.matches(".close") || event.target.matches(".modal")) {
+      closeModal()
+    }
+  })
+
+  function closeModal() {
+    modal.style.display = "none"
+  }
+</script>
 {% endblock %}
