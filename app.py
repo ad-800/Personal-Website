@@ -44,6 +44,8 @@ def project_website():
 def project_exqcorps():
     return render_template("project_exqcorps.html")
 
-@app.route("/cv", methods=['GET', 'POST'])
+@app.route("/cv")
 def cv():
-    return send_from_directory(directory='/static/images', filename='Cummins_CV.pdf', mimetype='application/pdf')
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/static/files/'
+    return send_from_directory(filepath, 'Cummins_CV.pdf')
